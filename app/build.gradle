@@ -45,6 +45,9 @@ android {
 //    kapt {
 //        correctErrorTypes = true
 //    }
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
 }
 
 def room_version = "2.6.1"
@@ -69,6 +72,8 @@ dependencies {
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
+    implementation libs.core.ktx
+    implementation libs.androidx.junit.ktx
     ksp(libs.androidx.room.compiler)
 
     // Kotlin (force stdlib)
@@ -82,6 +87,10 @@ dependencies {
     androidTestImplementation libs.androidx.compose.ui.test.junit4
     debugImplementation libs.androidx.compose.ui.tooling
     debugImplementation libs.androidx.compose.ui.test.manifest
+    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+    androidTestImplementation "androidx.test:core:1.5.0"
+
 }
 
 configurations.all {
