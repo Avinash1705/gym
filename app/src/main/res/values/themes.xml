@@ -2,4 +2,11 @@
 <resources>
 
     <style name="Theme.Gym" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.Gym.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#121212</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_gym</item>
+        <item name="postSplashScreenTheme">@style/Theme.Gym</item>
+    </style>
+
 </resources>

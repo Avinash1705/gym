@@ -22,6 +22,14 @@ class GymRepository(private val db: AppDatabase) {
         val today = today()
         return db.attendanceDao().observeTodayAttendance(memberId, today)
     }
+    suspend fun deleteMember(member: MemberEntity) {
+        db.memberDao().deleteMember(member)
+    }
+    // Optional: cascade delete attendance
+    suspend fun deleteMemberWithAttendance(memberId: Int) {
+        db.attendanceDao().deleteByMemberId(memberId)
+        db.memberDao().deleteMemberById(memberId)
+    }
     suspend fun markEntry(memberId: Int) {
         val today = today()
         val existing = db.attendanceDao().getTodayAttendance(memberId, today)

@@ -76,4 +76,6 @@ interface AttendanceDao {
         month: String
     ): MonthlySummary
 
+    @Query("DELETE FROM attendance WHERE memberId = :id")
+    suspend fun deleteByMemberId(id: Int)
 }

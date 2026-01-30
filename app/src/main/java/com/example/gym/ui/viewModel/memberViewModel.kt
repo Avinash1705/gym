@@ -114,5 +114,9 @@ class MemberViewModel(application: Application) : AndroidViewModel(application) 
         return list
     }
 
-
+    fun deleteMember(member: MemberEntity) {
+        viewModelScope.launch {
+            repo.deleteMember(member)
+        }
+    }
 }

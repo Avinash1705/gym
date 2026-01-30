@@ -1,6 +1,7 @@
 package com.example.gym.data.local
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
@@ -9,6 +10,11 @@ import kotlinx.coroutines.flow.Flow
 interface MemberDao {
     @Insert
     suspend fun insertMember(memberEntity: MemberEntity)
+
+    @Query("DELETE FROM members WHERE memberId = :id")
+    suspend fun deleteMemberById(id: Int)
+        @Delete
+    suspend fun deleteMember(member: MemberEntity)
 
     @Query("SELECT * FROM members")
     fun getAllMembers(): Flow<List<MemberEntity>>
