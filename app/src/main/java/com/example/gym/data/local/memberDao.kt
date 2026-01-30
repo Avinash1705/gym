@@ -15,4 +15,10 @@ interface MemberDao {
 
     @Query("SELECT * FROM members WHERE memberId=:id")
     suspend fun getMember(id: Int): MemberEntity
+
+    @Query("UPDATE members SET entryTime = :time, exitTime = NULL WHERE memberId = :id")
+    suspend fun markEntry(id: Int, time: Long)
+
+    @Query("UPDATE members SET exitTime = :time WHERE memberId = :id")
+    suspend fun markExit(id: Int, time: Long)
 }

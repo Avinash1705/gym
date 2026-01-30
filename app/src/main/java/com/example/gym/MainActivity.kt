@@ -4,6 +4,7 @@ import android.app.Application
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
@@ -26,6 +27,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppRoot(){
 val context  = LocalContext.current.applicationContext as Application
@@ -41,4 +43,5 @@ val context  = LocalContext.current.applicationContext as Application
 //    )
 //    val memberViewModel : MemberViewModel = viewModel()
     NavGraph(memberViewModel)
+
 }

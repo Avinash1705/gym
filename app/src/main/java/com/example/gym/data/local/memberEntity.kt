@@ -9,5 +9,8 @@ data class MemberEntity(
     val name: String,
     val phone: String,
     val planStart: Long,
-    val planEnd: Long
+    val planEnd: Long,
+
+    val entryTime: Long? = null,
+    val exitTime: Long? = null
 )
