@@ -5,15 +5,15 @@ plugins {
 }
 
 android {
-    namespace "com.example.gym"
-    compileSdk 34
+    namespace "com.luffy1705.gym"
+    compileSdk 35
 
     defaultConfig {
-        applicationId "com.example.gym"
+        applicationId "com.luffy1705.gym"
         minSdk 24
-        targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        targetSdk 35
+        versionCode 2
+        versionName "1.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
